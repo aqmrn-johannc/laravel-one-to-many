@@ -1,0 +1,119 @@
+
+POSTMAN Guide for One-To-Many Activity
+
+Create an API with CRUD functionality for student:
+
+
+============================================================
+You should be able to create a student without subject 
+
+
+method: POST , in http://127.0.0.1:8000/api/students
+[copy-paste if you have to]
+
+{
+    "name":"Person3",
+    "course":"BSIT"
+}
+
+============================================================
+You should be able to create student with multiple subjects
+
+method: POST , in http://127.0.0.1:8000/api/students
+[copy-paste if you have to]
+
+{
+    "name":"Person",
+    "course":"BSIT",
+    "subjects": [
+        {
+            "code":"ite001",
+            "title":"Title1"
+        },
+        {
+            "code":"ite002",
+            "title":"Title2"
+        }
+    ]
+}
+
+============================================================
+You should be able to update the created student
+
+
+method: POST , in http://127.0.0.1:8000/api/students/1
+[copy-paste if you have to]
+
+{
+    "_method":"PUT",
+    "name":"Person2",
+    "course":"BSCE"
+}
+
+============================================================
+You should be able to delete the student and the subjects connected to it. 
+
+method: DELETE , in http://127.0.0.1:8000/api/students/2
+[copy-paste if you have to]
+
+{
+    "_method": "PUT",
+    "code": "ite004",
+    "title": "Title4",
+    "student_id": 1
+}
+
+============================================================
+You should be able to show/list down all of the created students and all of the subjects associated to them. 
+
+method:GET , in http://127.0.0.1:8000/api/students
+
+============================================================
+
+
+Create an API with CRUD functionality for book:
+
+
+============================================================
+You should be able to create a book and assigned it to a specific student.
+
+method:POST , in http://127.0.0.1:8000/api/students
+[copy-paste if you have to]
+
+{
+    "code": "ite003",
+    "title": "Title3",
+    "student_id": 1
+}
+
+============================================================
+
+You should be able to update a book using its id
+
+method:POST , in http://127.0.0.1:8000/api/subjects/3
+[copy-paste if you have to]
+
+{
+    "_method": "PUT",
+    "code": "ite004",
+    "title": "Title4",
+    "student_id": 1
+}
+
+============================================================
+You should be able to delete a book using its id
+
+method:DELETE , in http://127.0.0.1:8000/api/subjects/3
+[copy-paste if you have to]
+
+{
+    "_method": "DELETE",
+    "code": "ite004",
+    "title": "Title4",
+    "student_id": 1
+}
+
+============================================================
+You should be able to show/list down all of the created books	
+
+method:GET , in http://127.0.0.1:8000/api/subjects
